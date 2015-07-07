@@ -1,0 +1,11 @@
+/*************************************
+CUTOMIZED CSS IN MAIN Home /index.php
+*************************************/
+
+#div-login {
+	margin: 0px auto;
+	box-shadow: 0px 0px 15px 3px grey;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 50px;
+}
