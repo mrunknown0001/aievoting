@@ -64,11 +64,11 @@
 				
 				//Check if the pin and registered Student NUmber is matched!
 				if(mysqli_num_rows($result) > 0) {
-					$_SESSION['student'] = $student_num;
 					while($row = mysqli_fetch_array($result)) {
 						
 						if ($row['pin'] == $pin) {
 							echo "Student Number and PIN Matched!";
+							$_SESSION['student'] = $student_num;
 							header("Location: voting.php");
 						}
 						else {
