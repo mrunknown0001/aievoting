@@ -9,6 +9,9 @@
 	if(!$conn) {
 		die("Error in Connecting DB Server!");
 	}
+	else {
+		//echo "Connected to Database Server!";
+	}
 
 	
 ?>
