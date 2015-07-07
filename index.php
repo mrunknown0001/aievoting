@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -23,45 +26,69 @@
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Continue >>>" />
 				</form>
-				<div id="err_display" >
+				<div>
 					<!-- Display the error in query if any -->
 					
 <!-- START OF PHP SCRIPT -->
 
 <?php
 
-	include "connect.php";
-	
-	$select_db = mysqli_select_db($conn,$db);
-
-	
-	if(isset($_POST['student_num'])) {
-		$student_num = $_POST['student_num'];
-		@$pin = $_POST['pin'];
-		//Checking if the student_num is correctly submitted to the script
-		//echo $student_num;
+	if(isset($_SESSION['student']) && !empty($_SESSION['student'])) {
+		header("Location: voting.php");
+	}
+	else {
+		include "connect.php";
+		
+		$select_db = mysqli_select_db($conn,$db);
 
 		
-		$student_num_query = "SELECT student_num, pin FROM students WHERE student_num='$student_num'";
-		
-		$result = mysqli_query($conn, $student_num_query);
-		
-		if(mysqli_num_rows($result) > 0) {
-			while($row = mysqli_fetch_array($result)) {
-				echo $row['pin'] . "<br/>";
+		if(isset($_POST['student_num'])) {
+			$student_num = $_POST['student_num'];
+			@$pin = $_POST['pin'];
+			//Checking if the student_num is correctly submitted to the script
+			//echo $student_num;
+
+			//Query String for students valid to vote/Registered Students
+			$student_num_query = "SELECT student_num, pin FROM students WHERE student_num='$student_num'";
+			$result = mysqli_query($conn, $student_num_query);
+			
+			//Query String to check if they already voted
+			$check_query = "SELECT student_num FROM voted WHERE student_num='$student_num'";
+			$check_result = mysqli_query($conn, $check_query);
+			
+			//Check If you are already voted
+			if(mysqli_num_rows($check_result) > 0) {
+				echo "<div id='err_display'>You have already voted!</div>";
 			}
-		}
-		else {
-			echo "0 Result!";
-		}
+			else {
+				
+				//Check if the pin and registered Student NUmber is matched!
+				if(mysqli_num_rows($result) > 0) {
+					$_SESSION['student'] = $student_num;
+					while($row = mysqli_fetch_array($result)) {
+						
+						if ($row['pin'] == $pin) {
+							echo "Student Number and PIN Matched!";
+							header("Location: voting.php");
+						}
+						else {
+							echo "<div id='err_display'>PIN Not Matched!</div>";
+						}
+					}
+				}
+				else {
+					echo "<div id='err_display'>No Record Found!</div>	";
+				}
+			
+			}
 
+		}
+	
 	}
 	
 ?>
 <!-- END OF PHP SCRIPT -->				
-					
-					
-				</div>
+
 			</div>
 			<div class="col-md-4"></div>
 		</div>

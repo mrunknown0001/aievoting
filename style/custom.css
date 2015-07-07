@@ -9,3 +9,16 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	padding: 10px;
 	margin-bottom: 50px;
 }
+
+#err_display {
+	width: 100%;
+	background-color: #E68080;
+	color: black;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 15px;
+}
