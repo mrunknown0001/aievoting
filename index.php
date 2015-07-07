@@ -17,13 +17,13 @@
 			<div id="div-login" class="col-md-4">
 				<h4 class="text-center">Enter Required Information:</h4>
 				<form action="" method="post">
-					<input type="text" class="form-control" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="8" required autofocus/>
+					<input type="text" class="form-control" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="11" required autofocus/>
 					<br/>
-					<input type="text" class="form-control" id="pin" name="pin" placeholder="PIN Here" maxlength="4"/>
+					<input type="password" class="form-control" id="pin" name="pin" placeholder="PIN Here" maxlength="4"/>
 					<br/>
-					<input type="submit" class="btn btn-primary" value="Continue >>>" onclick=""/>
+					<input type="submit" class="btn btn-primary" value="Continue >>>" />
 				</form>
-				<div id="err_display">
+				<div id="err_display" >
 					<!-- Display the error in query if any -->
 					
 <!-- START OF PHP SCRIPT -->
@@ -33,23 +33,28 @@
 	include "connect.php";
 	
 	$select_db = mysqli_select_db($conn,$db);
+
 	
-	if(isset($_POST['sudent_num'])) {
+	if(isset($_POST['student_num'])) {
 		$student_num = $_POST['student_num'];
 		@$pin = $_POST['pin'];
 		//Checking if the student_num is correctly submitted to the script
 		//echo $student_num;
-	}
-	
-	//Query Strings
-	
-	
-	function chkstud($stdnum) {
-		//echo $stdnum;
-	}
-	
-	function matchpin($p) {
-		//echo $p;
+
+		
+		$student_num_query = "SELECT student_num, pin FROM students WHERE student_num='$student_num'";
+		
+		$result = mysqli_query($conn, $student_num_query);
+		
+		if(mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_array($result)) {
+				echo $row['pin'] . "<br/>";
+			}
+		}
+		else {
+			echo "0 Result!";
+		}
+
 	}
 	
 ?>
@@ -75,3 +80,7 @@
 </script>
 </body>
 </html>
+<?php
+	mysqli_close($conn);
+	exit();
+?>
