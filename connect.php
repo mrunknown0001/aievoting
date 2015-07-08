@@ -13,10 +13,6 @@
 	}
 	else {
 		//echo "Connected to Database Server!";
-
 	}
 
-	
-	
-	
 ?>

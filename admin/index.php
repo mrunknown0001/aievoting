@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -7,18 +11,26 @@
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron"><b>Admin: AIE Voting System</b></div>
+		<div class="jumbotron">
+			<b>Admin Login: AIE Voting System</b><br/>
+			
+			<form action="set.php" method="post">
+			<table>
+				<tr>
+					<td>Username:</td><td><input type="text" name="user" id="user" required autofocus/></td>
+				</tr>
+				<tr>
+					<td>Password:</td><td><input type="text" name="pass" id="user" required/></td>
+				</tr>
+				<tr>
+					<td></td><td><input type="submit" value="Login"></td>
+				</tr>
+			</table>
+			</form>
+		</div>
 		
 		
-		
-		<nav>
-			<ul class="list-unstyled">
-				<li><a href="#"><h3>Generate Result</h3></a></li>
-				<li><a href="#">Add Students Record</a></li>
-				<li><a href="#">Add Candidate</a></li>
-			</ul>
-		</nav>
-		
+	
 	</div>
 
 </body>
