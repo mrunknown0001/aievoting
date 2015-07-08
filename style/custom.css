@@ -23,3 +23,8 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	margin-top: 15px;
 	
 }
+
+#add_student_form {
+	padding: 50px;
+	padding-top: 0px;
+}
