@@ -6,7 +6,8 @@
 <head>
 	<title>AIE Voting System</title>
 	
-	<?php include "head_tag.php";?>
+	<?php include_once "head_tag.php";?>
+	
 </head>
 <body>
 	<div class="container">

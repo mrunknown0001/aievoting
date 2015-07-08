@@ -1,8 +1,10 @@
 <?php
+	error_reporting(0);
+
 	$server = "127.0.0.1";
 	$user = "root";
 	$pass = "";
-	$db = "voting";
+	$db = "voting1";
 	
 	$conn = mysqli_connect($server, $user, $pass);
 	
@@ -11,7 +13,10 @@
 	}
 	else {
 		//echo "Connected to Database Server!";
+
 	}
 
+	
+	
 	
 ?>
