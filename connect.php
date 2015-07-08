@@ -1,4 +1,6 @@
 <?php
+	error_reporting(0);
+
 	$server = "127.0.0.1";
 	$user = "root";
 	$pass = "";
@@ -13,5 +15,4 @@
 		//echo "Connected to Database Server!";
 	}
 
-	
 ?>

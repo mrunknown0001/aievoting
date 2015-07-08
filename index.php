@@ -6,7 +6,8 @@
 <head>
 	<title>AIE Voting System</title>
 	
-	<?php include "head_tag.php";?>
+	<?php include_once "head_tag.php";?>
+	
 </head>
 <body>
 	<div class="container">
@@ -20,7 +21,7 @@
 			<div id="div-login" class="col-md-4">
 				<h4 class="text-center">Enter Required Information:</h4>
 				<form action="" method="post">
-					<input type="text" class="form-control" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="11" required autofocus/>
+					<input type="text" class="form-control text-uppercase" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="11" required autofocus/>
 					<br/>
 					<input type="password" class="form-control" id="pin" name="pin" placeholder="PIN Here" maxlength="4"/>
 					<br/>
@@ -47,7 +48,7 @@
 			@$pin = $_POST['pin'];
 			//Checking if the student_num is correctly submitted to the script
 			//echo $student_num;
-
+			
 			//Query String for students valid to vote/Registered Students
 			$student_num_query = "SELECT student_num, pin FROM students WHERE student_num='$student_num'";
 			$result = mysqli_query($conn, $student_num_query);
