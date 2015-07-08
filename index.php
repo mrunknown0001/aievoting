@@ -21,7 +21,7 @@
 			<div id="div-login" class="col-md-4">
 				<h4 class="text-center">Enter Required Information:</h4>
 				<form action="" method="post">
-					<input type="text" class="form-control" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="11" required autofocus/>
+					<input type="text" class="form-control text-uppercase" id="student_num" name="student_num" placeholder="ID Number Here"  maxlength="11" required autofocus/>
 					<br/>
 					<input type="password" class="form-control" id="pin" name="pin" placeholder="PIN Here" maxlength="4"/>
 					<br/>

@@ -31,9 +31,9 @@
 			echo "<b>Voter: <u>" . $row['fname'] . " " . $row['lname'] . "</u></b>";
 			
 		}
+		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		echo "<a href='destroy.php'><b>Cancel</b></a>";
 		
-		//Start of Form in Voting
-		echo "<form action='' method='get'>";
 		
 		//Load Candidates for Prsident ===> Get the code and student number for the result
 		$get_candidate_p = "SELECT * FROM candidate WHERE position='President'";
@@ -54,8 +54,6 @@
 			}
 		}
 		
-		//end of form in voting
-		echo "</form>";
 	}
 	else {
 		header('Location: index.php');

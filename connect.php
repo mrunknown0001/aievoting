@@ -4,7 +4,7 @@
 	$server = "127.0.0.1";
 	$user = "root";
 	$pass = "";
-	$db = "voting1";
+	$db = "voting";
 	
 	$conn = mysqli_connect($server, $user, $pass);
 	
