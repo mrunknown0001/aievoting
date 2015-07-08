@@ -50,11 +50,11 @@
 			//Put radio button here in result for selecting president candidates
 			while($row_name_p = mysqli_fetch_array($p_name_result)) {
 				//echo "<input type='radio' name=''/>"; //Radio button set for selecting president
-<<<<<<< HEAD
+
 				echo "<span class='text-uppercase'>" . $row_name_p['fname'] . " " . $row_name_p['lname'] . " - " . $row_p['party'] . "</span><br/>";
-=======
-				echo $row_name_p['fname'] . " " . $row_name_p['lname'] . "<br/>";
->>>>>>> fbf4390ff6fb0dcec42f1f127806c98a80dc0f63
+
+
+				
 			}
 		}
 		

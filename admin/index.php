@@ -8,7 +8,6 @@
 	<title>Admin: AIE Voting System</title>
 	
 	<?php include "head_tag.php"; ?>
-<<<<<<< HEAD
 	
 	<style>
 		#user, #pass {
@@ -16,13 +15,11 @@
 		}
 	</style>
 	
-=======
->>>>>>> fbf4390ff6fb0dcec42f1f127806c98a80dc0f63
+	
 </head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
-<<<<<<< HEAD
 			<h3>Admin Login: AIE Voting System</h3><br/>
 			
 			<form action="" method="post">
@@ -83,24 +80,7 @@
 	}
 ?>
 <!-- end of the php script in this page-->
-			
-=======
-			<b>Admin Login: AIE Voting System</b><br/>
-			
-			<form action="set.php" method="post">
-			<table>
-				<tr>
-					<td>Username:</td><td><input type="text" name="user" id="user" required autofocus/></td>
-				</tr>
-				<tr>
-					<td>Password:</td><td><input type="text" name="pass" id="user" required/></td>
-				</tr>
-				<tr>
-					<td></td><td><input type="submit" value="Login"></td>
-				</tr>
-			</table>
-			</form>
->>>>>>> fbf4390ff6fb0dcec42f1f127806c98a80dc0f63
+		
 		</div>
 		
 		
@@ -108,8 +88,8 @@
 	</div>
 
 </body>
-<<<<<<< HEAD
+
 </html>
-=======
+
 </html>
->>>>>>> fbf4390ff6fb0dcec42f1f127806c98a80dc0f63
+

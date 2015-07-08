@@ -3,7 +3,6 @@
 	
 	if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {
 		
-<<<<<<< HEAD
 		echo "<!DOCTYPE html>
 			<html lang='en-US'>
 			<head>
@@ -31,8 +30,7 @@
 			</html>
 		";
 		
-=======
->>>>>>> fbf4390ff6fb0dcec42f1f127806c98a80dc0f63
+
 	}
 	else {
 		header('Location: index.php');
