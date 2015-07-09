@@ -44,7 +44,7 @@
 
 		
 		if(isset($_POST['student_num'])) {
-			$student_num = $_POST['student_num'];
+			$student_num = strtoupper($_POST['student_num']);
 			@$pin = $_POST['pin'];
 			//Checking if the student_num is correctly submitted to the script
 			//echo $student_num;

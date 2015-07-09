@@ -3,7 +3,7 @@
 	
 	//session_destroy();
 	
-	session_unset(); 
+	unset($_SESSION['student']); 
 	
 	header("Location: index.php");
 ?>

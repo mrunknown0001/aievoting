@@ -16,7 +16,7 @@
 		
 <?php
 	if(isset($_SESSION['student']) && !empty($_SESSION['student'])) {
-		//if session is set
+		//if session is set, assign the value of session student to $student variable
 		$student =  $_SESSION['student'];
 		
 		include "connect.php";
@@ -53,8 +53,6 @@
 
 				echo "<span class='text-uppercase'>" . $row_name_p['fname'] . " " . $row_name_p['lname'] . " - " . $row_p['party'] . "</span><br/>";
 
-
-				
 			}
 		}
 		

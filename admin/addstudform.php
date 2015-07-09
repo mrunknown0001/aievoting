@@ -13,6 +13,7 @@
 		$student_lname = ucfirst($_POST['lname']);
 		$student_fname = ucfirst($_POST['fname']);
 		$student_pin = $_POST['pin'];
+		$student_year = $_POST['year'];
 		
 		//check if the student number existing in the database
 		$check_query = "SELECT * FROM students WHERE student_num='$student_number'";
@@ -24,8 +25,8 @@
 		else {
 			
 			//insert the student number in the record
-			$add_student_query = "INSERT INTO students (student_num, pin, fname, lname) 
-								VALUES ('$student_number','$student_pin','$student_fname','$student_lname')";
+			$add_student_query = "INSERT INTO students (student_num, pin, fname, lname, year) 
+								VALUES ('$student_number','$student_pin','$student_fname','$student_lname','$student_year')";
 		
 			if(mysqli_query($conn,$add_student_query)) {
 				echo "<div id='msg_success'>Sir Pogi! Student with ID Number <b>" . $student_number . "</b> successfully added!</div>";
@@ -41,7 +42,7 @@
 ?>
 	
 	
-	<h2>Add Registered Students</h2>
+	<h2>Register Students for Election</h2>
 	<form action="" method="post">
 		Student Number:
 		<input class="text-uppercase form-control" type="text" maxlength="11" name="stdntnum" id="stdntnum" required autofocus/> 
@@ -51,6 +52,14 @@
 		<input class="text-lowercase form-control" type="text" maxlength="30" name="lname" id="lname" required/>
 		PIN:
 		<input class="form-control" type="text" maxlength="4" name="pin" id="pin" required/>
+		Year Level:
+		<select class="form-control" name="year" id="year" required>
+			<option value="" default>Select Year Level</option>
+			<option value="First">First Year</option>
+			<option value="Second">Second Year</option>
+			<option value="Third">Third Year</option>
+			<option value="Fourth">Fourth Year</option>
+		</select>
 		<br/>
 		<input class="btn btn-danger" type="reset" value="Clear All"/>
 		<br/><br/>

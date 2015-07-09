@@ -24,7 +24,7 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	
 }
 
-#add_student_form {
+#add_student_form, #add_cand_form {
 	padding: 50px;
 	padding-top: 0px;
 }
@@ -57,4 +57,8 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	color: white;
 	padding: 5px;
 	font-size: 30px;
+}
+
+.faded {
+	color: #858585;
 }

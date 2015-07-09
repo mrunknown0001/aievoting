@@ -1,13 +1,12 @@
 <?php
 	session_start();
 	
-	session_destroy();
+	unset($_SESSION['user']);
 	
 	@mysqli_close($conn);
 	
 	
 	header('Location: index.php');
 	
-	header('Location: index.php');
 
 ?>
