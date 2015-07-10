@@ -78,7 +78,7 @@
 					}
 				}
 				else {
-					echo "<div id='err_display'>No Record Found!</div>	";
+					echo "<div id='err_display'>Not Registered Student/Invalid ID Number!</div>	";
 				}
 			
 			}

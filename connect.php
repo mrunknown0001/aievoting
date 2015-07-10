@@ -6,7 +6,8 @@
 	$pass = "";
 	$db = "voting";
 	
-	$conn = mysqli_connect($server, $user, $pass);
+	$conn = mysqli_connect($server, $user, $pass, $db);
+	
 	
 	if(!$conn) {
 		die("Error in Connecting DB Server!");

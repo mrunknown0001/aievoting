@@ -33,6 +33,8 @@
 				<input class="btn btn-primary" type="submit" value="Login"/>
 				
 			</form>
+			<br/>
+			<button class='btn btn-link'><a href='../index.php'><------ Back To Voting</a></button>
 <!-- start of the php script in this page -->
 <?php
 	

@@ -23,7 +23,7 @@
 			
 			//check if the student if already a registered candidate
 			$check_reg_cand = "SELECT * FROM candidate WHERE student_num='$sn'";
-			$result_crc = mysqli_query($conn, $ckeck_reg_cand);
+			$result_crc = mysqli_query($conn, $check_reg_cand);
 			
 			if(mysqli_num_rows($result_crc) > 0 ) {
 				echo "<div id='msg_info'>Sir Pogi! Already a candidate!</div>";
@@ -64,10 +64,20 @@
 		<label for="position">Position:</label>
 		<select class="form-control" name="position" id="position" required>
 			<option value="" default>Select Candidate</option>
-			<option value="President">President</option>
-			<option value="Vice President">Vice President</option>
-			<option value="1st Year Representative">1st Year Representative</option>
-			<option value="2nd Year Representative">2nd Year Representative</option>
+			
+			<?php
+				//Load Availabe Position
+				$load_p_query = "SELECT * FROM position";
+				$result_pq = mysqli_query($conn, $load_p_query);
+				
+				while($row = mysqli_fetch_array($result_pq)) {
+					
+					echo "<option value='" . $row['pname']  . "'>" . $row['pname'] . "</option>";
+					
+				}
+			
+			?>
+			
 		</select>
 		<br/>
 		<input class="btn btn-danger" type="reset" value="Clear All"/>

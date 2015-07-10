@@ -9,7 +9,7 @@
 		echo "<!DOCTYPE html>
 			<html lang='en-US'>
 			<head>
-				<title>Settings AIE Voting System</title>";
+				<title>Live Result AIE Voting System</title>";
 				
 		include "head_tag.php";
 				
@@ -17,23 +17,34 @@
 			<body>
 				<div class='container'>
 					<div class='jumbotron'>
-						<h1>AIE Voting System</h1>";
+						<h1>Live Result AIE Voting System</h1>";
 		echo 			"<b>Welcome!</b> ". "<span class='text-uppercase'><b><u>" . $_SESSION['user'] . "</u></b><br/></span>";		
 		echo 			"<a href='logout.php'>Logout</a><br/><br/>"; //Logout function 
 		
-		echo 	"<button class='btn btn-link' ><a href='addstudform.php'>Add Students</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='addcandform.php'>Add Candidate</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='addposiform.php'>Add Position</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='live.php' target='_blank'>Live Result</a></button><br/>"; 
-		echo 	"<button class='btn btn-link' ><a href='#' >View Result</a></button><br/>";
+		echo 			"<br/></br>";
+		echo 			"<button class='btn btn-danger' onclick='self.close();'>Close</div>";
 		
-		
-		
+
 		echo "		</div>";
-		
 		
 	}
 	else {
 		header('Location: index.php');
 	}
 ?>
+
+	<div id='live' class='container'>
+		<?php require_once "lr.php";?>
+	</div>
+
+<script>
+$("document").ready(function(){
+	var interval = setInterval(refresh_box(), 5000);
+	function refresh_box() {
+		$("#live").load('lr.php');
+	}
+}
+</script>
+	
+</body>
+</html>

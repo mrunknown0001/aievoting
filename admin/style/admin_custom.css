@@ -24,7 +24,7 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	
 }
 
-#add_student_form, #add_cand_form {
+#add_student_form, #add_cand_form , #add_posi_form{
 	padding: 50px;
 	padding-top: 0px;
 }
