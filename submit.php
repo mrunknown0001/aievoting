@@ -8,6 +8,7 @@
 		
 		$voter = $_SESSION['student'];
 		$candidate_p = $_POST['president'];
+		$candidate_vp = $_POST['vp'];
 			
 		//this function updates the vote count of the candidate
 		//just provide the ff: the candidate student number, the connection string for db server and the voter id number
@@ -15,11 +16,21 @@
 		//for presidential count
 		addcount($candidate_p,$conn,$voter);
 		
+		//for vice president count
+		addcount($candidate_vp,$conn,$voter);
+		
+		
+		
 	}
 	else {
 		header('Location: index.php');
 	}
 	
+	
+	/**********************************
+	START OF FUNCTION FOR THE CANDIDATE
+	
+	*********************************/
 	function addcount($sn,$conn,$voter){
 		
 		//echo $sn;
@@ -41,14 +52,19 @@
 			
 			if(mysqli_query($conn,$update_vcount)) {
 				
-				//echo "new vcount to " . $sn . ": " . $vc;
-				$voter_add = "INSERT INTO voted (student_num) VALUES ('$voter')";
-				mysqli_query($conn,$voter_add);
-					
-				unset($_SESSION['student']); 
-					
-				echo "VOUTE COUNT SUCCESSFULLY ADDED!";
+				//this is to avoid redundant record in voted
+				$voter_redundant_check = "SELECT * FROM voted WHERE student_num='$voter'";
+				$result_vrc = mysqli_query($conn, $voter_redundant_check);
 				
+				if(mysqli_num_rows($result_vrc) > 0) {
+					//the record is present nothing to do
+				}
+				else {					
+					$voter_add = "INSERT INTO voted (student_num) VALUES ('$voter')";
+					mysqli_query($conn,$voter_add);
+				}
+				unset($_SESSION['student']); 
+				//echo "VOUTE COUNT SUCCESSFULLY ADDED!";
 				//header('Location: index.php');
 			}
 			else {
@@ -77,15 +93,21 @@
 				
 				
 				if(mysqli_query($conn,$add_cand)) {
-					//successfully added to result
-					//we must add the student number of voter to the voted table
-					$voter_add = "INSERT INTO voted (student_num) VALUES ('$voter')";
-					mysqli_query($conn,$voter_add);
+					
+					//this is to avoid redundant record in voted
+					$voter_redundant_check = "SELECT * FROM voted WHERE student_num='$voter'";
+					$result_vrc = mysqli_query($conn, $voter_redundant_check);
+					
+					if(mysqli_num_rows($result_vrc) > 0) {
+						//the record is present nothing to do
+					}
+					else {					
+						$voter_add = "INSERT INTO voted (student_num) VALUES ('$voter')";
+						mysqli_query($conn,$voter_add);
+					}
 					
 					unset($_SESSION['student']); 
-					
-					echo "New Vote Counted!";
-					
+					//echo "New Vote Counted!";
 					//header('Location: index.php');
 					
 				}
@@ -98,3 +120,22 @@
 		
 	}
 ?>
+<!DOCTYPE html>
+<hhtml lang='en-US'>
+<head>
+	<title>Submit Vote</title>
+	<meta http-equiv="refresh" content="5;url=index.php" />
+	<?php include "head_tag.php"; ?>
+</head>
+<body>
+	<div class='container'>
+		<div class="jumbotron">
+			<h1>Vote Successful! Thank You For Your Cooperation!  <small>--- AIE Tarlac</small></h1>
+		</div>
+	</div>
+<script>
+
+
+</script>
+</body>
+</html>

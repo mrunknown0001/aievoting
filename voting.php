@@ -34,35 +34,27 @@
 		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 		echo "<a href='destroy.php'><b>Cancel</b></a>";
 		
+		/******************************************************
+		*******************************************************
+		LOADING OF ALL CANDIDATES BELOW THIS COMMENT
+		*******************************************************
+		*******************************************************/
+		
+		
 		echo "<form action='submit.php' method='post'>";
 
-		echo "<h2>President</h2>";
+		echo "<h2>Candidates for President</h2>";
 		
 		//Load Candidates for Prsident ===> Get the code and student number for the result
-		$get_candidate_p = "SELECT * FROM candidate WHERE position='President'";
-		$p_result = mysqli_query($conn, $get_candidate_p);
-
-		while($row_p = mysqli_fetch_array($p_result)) {
-			$get_namep = $row_p['student_num'];
-			
-			$p_name_query = "SELECT * FROM students WHERE student_num='$get_namep'";
-			$p_name_result = mysqli_query($conn, $p_name_query);
-			
-			//Put radio button here in result for selecting president candidates
-			while($row_name_p = mysqli_fetch_array($p_name_result)) {
-				
-				echo "<input type='radio' name='president' value='" . $row_name_p['student_num'] . "'/>"; //Radio button set for selecting president
-
-				echo "<span class='text-uppercase'>" . $row_name_p['fname'] . " " . $row_name_p['lname'] . " - " . $row_p['party'] . "</span><br/>";
-
-			}
-		}
-		
+		onecand('President','president',$conn);
 		//End of loading candidate for PResident
 		
+		echo "<h2>Candidates for Vice Presidents</h2>";
+		//load cadidates for vice presidents
+		onecand('Vice President','vp',$conn);
+		//end of loading candidates for vice presidents
 		
-		
-		echo "<input class='btn btn-success' type='submit' value='Vote'/>";
+		echo "<br/><input class='btn btn-success' type='submit' value='Vote'/>";
 		
 		echo "</form>";
 		
@@ -70,7 +62,36 @@
 	else {
 		header('Location: index.php');
 	}
+	
+	
+	/*******************************************************
+	FUNCTION FOR ONLY ONE CONDIDATE POSITION -- Radio Button
+	********************************************************/
+	
+	function onecand($position,$pname,$conn) {
+		$get_candidate_p = "SELECT * FROM candidate WHERE position='$position'";
+		$p_result = mysqli_query($conn, $get_candidate_p);
 
+		while($row_p = mysqli_fetch_array($p_result)) {
+			
+			$get_namep = $row_p['student_num'];
+			$p_name_query = "SELECT * FROM students WHERE student_num='$get_namep'";
+			$p_name_result = mysqli_query($conn, $p_name_query);
+				
+			//Put radio button here in result for selecting president candidates
+			while($row_name_p = mysqli_fetch_array($p_name_result)) {
+				
+				echo "<input type='radio' name='$pname' value='" . $row_name_p['student_num'] . "'/>"; //Radio button set for selecting candidate
+
+				echo "<span class='text-uppercase'><b><u> " . $row_name_p['fname'] . " " . $row_name_p['lname'] . "</u> - " . $row_p['party'] . "</b></span><br/>";
+
+			}
+		}
+	}
+	
+	/***************************************************************
+	END OF FUNCTION USE TO SELECT AND LOAD SINGLE CANDIDATE POSITION
+	***************************************************************/
 ?>
 	
 	</div>

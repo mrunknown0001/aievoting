@@ -44,15 +44,15 @@
 	
 	<h2>Register Students for Election</h2>
 	<form action="" method="post">
-		Student Number:
+		<label for="stdntnum">Student Number:</label>
 		<input class="text-uppercase form-control" type="text" maxlength="11" name="stdntnum" id="stdntnum" required autofocus/> 
-		First Name:
+		<label for="fname">First Name:</label>
 		<input class="text-lowercase form-control" type="text" maxlength="30" name="fname" id="fname" required />
-		Last Name:
+		<label for="lname">Last Name:</label>
 		<input class="text-lowercase form-control" type="text" maxlength="30" name="lname" id="lname" required/>
-		PIN:
+		<label for="pin">PIN:</label>
 		<input class="form-control" type="text" maxlength="4" name="pin" id="pin" required/>
-		Year Level:
+		<label for="year">Year Level:</label>
 		<select class="form-control" name="year" id="year" required>
 			<option value="" default>Select Year Level</option>
 			<option value="First">First Year</option>

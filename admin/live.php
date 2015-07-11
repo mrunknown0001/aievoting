@@ -38,12 +38,21 @@
 	</div>
 
 <script>
-$("document").ready(function(){
-	var interval = setInterval(refresh_box(), 5000);
-	function refresh_box() {
-		$("#live").load('lr.php');
-	}
-}
+	
+	//refresh page after 5 secods
+     var time = new Date().getTime();
+     $(document.body).bind("mousemove keypress", function(e) {
+         time = new Date().getTime();
+     });
+
+     function refresh() {
+         if(new Date().getTime() - time >= 5000) 
+             window.location.reload(true);
+         else 
+             setTimeout(refresh, 5000);
+     }
+
+     setTimeout(refresh, 5000);
 </script>
 	
 </body>

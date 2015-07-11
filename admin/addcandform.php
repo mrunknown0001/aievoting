@@ -26,7 +26,7 @@
 			$result_crc = mysqli_query($conn, $check_reg_cand);
 			
 			if(mysqli_num_rows($result_crc) > 0 ) {
-				echo "<div id='msg_info'>Sir Pogi! Already a candidate!</div>";
+				echo "<div id='msg_info'>Sir Pogi! Student is already a candidate!</div>";
 			}
 			else {
 				//register the candidate/student here

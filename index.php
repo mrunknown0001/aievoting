@@ -68,7 +68,7 @@
 					while($row = mysqli_fetch_array($result)) {
 						
 						if ($row['pin'] == $pin) {
-							echo "Student Number and PIN Matched!";
+							//echo "Student Number and PIN Matched!";
 							$_SESSION['student'] = $student_num;
 							header("Location: voting.php");
 						}
@@ -78,7 +78,7 @@
 					}
 				}
 				else {
-					echo "<div id='err_display'>Not Registered Student/Invalid ID Number!</div>	";
+					echo "<div id='err_display'>Invalid ID Number!</div>	";
 				}
 			
 			}
