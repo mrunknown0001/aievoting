@@ -9,7 +9,7 @@
 		echo "<!DOCTYPE html>
 			<html lang='en-US'>
 			<head>
-				<title>Settings AIE Voting System</title>";
+				<title>Result AIE Voting System</title>";
 				
 		include "head_tag.php";
 				
@@ -17,20 +17,15 @@
 			<body>
 				<div class='container'>
 					<div class='jumbotron'>
-						<h1>AIE Voting System</h1>";
+						<h1>Result AIE Voting System</h1>";
 		echo 			"<b>Welcome!</b> ". "<span class='text-uppercase'><b><u>" . $_SESSION['user'] . "</u></b><br/></span>";		
 		echo 			"<a href='logout.php'>Logout</a><br/><br/>"; //Logout function 
 		
-		echo 	"<button class='btn btn-link' ><a href='addstudform.php'>Add Students</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='addcandform.php'>Add Candidate</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='addposiform.php'>Add Position</a></button><br/>";
-		echo 	"<button class='btn btn-link' ><a href='live.php' target='_blank'>Live Result</a></button><br/>"; 
-		echo 	"<button class='btn btn-link' ><a href='viewresult.php' >View Result</a></button><br/>";
+		echo 			"<br/></br>";
+		echo 			"<button class='btn btn-link'><a href='set.php'><----Back To Admin Home</a></div>";
 		
-		
-		
+
 		echo "		</div>";
-		
 		
 	}
 	else {

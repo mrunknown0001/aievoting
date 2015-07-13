@@ -43,7 +43,7 @@
 	<form action="" method="post">
 	
 		<label for="position">Position Title: <i class='faded'>Type in lowercase</i></label>
-		<input class="form-control" type="text" maxlength="15" name="position" id="position" required autofocus/>
+		<input class="form-control" type="text" maxlength="30" name="position" id="position" required autofocus/>
 		
 		<label for="pid">Position ID</label>
 		<input class="form-control" type="text" maxlength="15" name="pid" id="pid" required/>

@@ -34,26 +34,26 @@
 ?>
 
 	<div id='live' class='container'>
-		<?php require_once "lr.php";?>
+		<h2>Loading....</h2>
 	</div>
 
 <script>
+	//refreshing every second part of the
+	//page only @ div #live
 	
-	//refresh page after 5 secods
-     var time = new Date().getTime();
-     $(document.body).bind("mousemove keypress", function(e) {
-         time = new Date().getTime();
-     });
-
-     function refresh() {
-         if(new Date().getTime() - time >= 5000) 
-             window.location.reload(true);
-         else 
-             setTimeout(refresh, 5000);
-     }
-
-     setTimeout(refresh, 5000);
+	var refreshPage = setInterval(
+	function ()	{
+	$('#live').load('lr.php');
+	}, 1000); 
+	
+	
 </script>
+	
+	<div class='container'>
+		<div class='jumbotron'>
+			<h3 class='text-center'>&reg; Gawang Gwapo &trade;</h3>
+		</div>
+	</div>
 	
 </body>
 </html>

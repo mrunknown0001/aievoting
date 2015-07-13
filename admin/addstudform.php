@@ -66,5 +66,7 @@
 		<input class="btn btn-primary" type="submit" value="Add Record"/>
 	</form>
 </div>
+<script>
+</script>
 </body>
 </html>

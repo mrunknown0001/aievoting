@@ -62,3 +62,7 @@ CUTOMIZED CSS IN MAIN Home /index.php
 .faded {
 	color: #858585;
 }
+
+.search {
+	min-width: 300px;
+}

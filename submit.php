@@ -9,15 +9,44 @@
 		$voter = $_SESSION['student'];
 		$candidate_p = $_POST['president'];
 		$candidate_vp = $_POST['vp'];
+		$candidate_sec = $_POST['sec'];
+		$candidate_treas = $_POST['treas'];
+		$candidate_aud = $_POST['aud'];
+		$candidate_busmgr = $_POST['busmgr'];
+		$candidate_pro = $_POST['pro'];
+		$candidate_1strep = $_POST['1strep'];
+		$candidate_2ndrep = $_POST['2ndrep'];
 			
-		//this function updates the vote count of the candidate
-		//just provide the ff: the candidate student number, the connection string for db server and the voter id number
+		//this function updates the vote count of the candidate , just provide the ff: the candidate student number, the connection string for db server and the voter id number
 		
 		//for presidential count
 		addcount($candidate_p,$conn,$voter);
 		
 		//for vice president count
 		addcount($candidate_vp,$conn,$voter);
+		
+		//for secretary
+		addcount($candidate_sec,$conn,$voter);
+		
+		//for treasurer
+		addcount($candidate_treas,$conn,$voter);
+		
+		//for auditor
+		addcount($candidate_aud,$conn,$voter);
+		
+		//for busmgr
+		addcount($candidate_busmgr,$conn,$voter);
+		
+		//for pro
+		addcount($candidate_pro,$conn,$voter);
+		
+		//for 1st year rep
+		addcount($candidate_1strep,$conn,$voter);
+		
+		//for 2nd year rep
+		addcount($candidate_2ndrep,$conn,$voter);
+		
+		
 		
 		
 		

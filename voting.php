@@ -54,6 +54,34 @@
 		onecand('Vice President','vp',$conn);
 		//end of loading candidates for vice presidents
 		
+		echo "<h2>Secretary</h2>";
+		//load candidates for secretary
+		onecand('Secretary','sec',$conn);
+		
+		echo "<h2>Treasurer</h2>";
+		//load candidates for treasurer
+		onecand('Treasurer','treas',$conn);
+		
+		echo "<h2>Auditor</h2>";
+		//load candidates for auditor
+		onecand('Auditor','aud',$conn);
+		
+		echo "<h2>Business Manager</h2>";
+		//load candidates for bus mgr
+		onecand('Business Manager','busmgr',$conn);
+		
+		echo "<h2>PRO</h2>";
+		//load candidates for PRO
+		onecand('PRO','pro',$conn);
+		
+		echo "<h2>1st Year Representative</h2>";
+		//load 1st year rep
+		onecand('1st Year Representative','1strep',$conn);
+		
+		echo "<h2>2nd Year Representative</h2>";
+		//load 2nd year rep
+		onecand('2nd Year Representative','2ndrep',$conn);
+		
 		echo "<br/><input class='btn btn-success' type='submit' value='Vote'/>";
 		
 		echo "</form>";
@@ -81,7 +109,7 @@
 			//Put radio button here in result for selecting president candidates
 			while($row_name_p = mysqli_fetch_array($p_name_result)) {
 				
-				echo "<input type='radio' name='$pname' value='" . $row_name_p['student_num'] . "'/>"; //Radio button set for selecting candidate
+				echo "<input type='radio' name='$pname' value='" . $row_name_p['student_num'] . "required'/>"; //Radio button set for selecting candidate
 
 				echo "<span class='text-uppercase'><b><u> " . $row_name_p['fname'] . " " . $row_name_p['lname'] . "</u> - " . $row_p['party'] . "</b></span><br/>";
 
