@@ -1,5 +1,8 @@
 <meta charset="utf-8"/>
 
+
+<link rel="stylesheet" href="style/main.css"/>
+
 <link rel="stylesheet" href="style/bootstrap.css"/>
 
 <link rel="stylesheet" href="style/admin_custom.css"/>

@@ -45,12 +45,12 @@
 		loadcount('PRO',$conn);
 		
 		
-		//for 1st year rep
-		loadcount('1st Year Representative',$conn);
+		//for 1st year bod
+		loadcount('1st Year BOD',$conn);
 		
 		
-		//for 2nd year rep
-		loadcount('2nd Year Representative',$conn);
+		//for 2nd year bod
+		loadcount('2nd Year BOD',$conn);
 		
 		
 		echo "</table>";
@@ -80,7 +80,21 @@
 			$cand_sn = $row['student_num'];
 			//load candidates vote count with name
 			if($row['position'] === $position) {
-				echo "<tr><td>" . $row['position'] . "</td><td>" . callname($cand_sn,$conn) . " - $cand_sn " . "</td><td>" . $row['vcount'] . "</td></tr>";
+				echo "<tr><td>" . $row['position'] . "</td><td>" . callname($cand_sn,$conn) . " - $cand_sn " . "</td><td>";
+				
+				$c = $row['vcount'];
+				$v = voters($conn);
+				$percent = (int)$c / (int)$v;
+				
+				echo "<div class='progress'>";
+				//Percentage will count in vote count divided by total voter count
+				echo "<div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width:" . $percent . "%'>";
+				echo "<span class='graph_num'>" . $row['vcount'] . "</span>";
+				echo "</div>";
+				echo "</div>";
+				
+				
+				echo "</td></tr>";
 			}
 			else {
 				//echo 'Error in Case Sensitivity';
@@ -142,5 +156,14 @@
 		/////////////End of load to reasult all
 		
 	}
+	
+	function voters($conn) {
+		
+		$query = "SELECT COUNT(*) FROM students";
+		$result = mysqli_query($conn, $query);
+		
+		return $result;
+	}
+	
 
 ?>

@@ -97,7 +97,7 @@
 	
 	<div class="container">
 		<div class="jumbotron">
-			<p class="text-center">AIE College Tarlac Voting &copy; 2015</p>
+			<p class="text-center">AIE College Tarlac Voting System Version 1.0</p>
 		</div>
 	</div>
 	

@@ -10,6 +10,11 @@ CUTOMIZED CSS IN MAIN Home /index.php
 	margin-bottom: 50px;
 }
 
+.graph_num {
+	color: black;
+	font-size: 15px;
+}
+
 #err_display {
 	width: 100%;
 	background-color: #E68080;
@@ -66,3 +71,137 @@ CUTOMIZED CSS IN MAIN Home /index.php
 .search {
 	min-width: 300px;
 }
+
+.selection{
+	padding-bottom: 50px;
+}
+
+.circle{
+	background-color: gray;
+	width: 250px;
+	height: 200px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+	color: white;
+	position: relative;
+	overflow: hidden;
+	box-shadow: inset 1px 0 55px rgba(32, 21, 21, 0.24);
+}
+
+.circle:hover{
+	transition: all .5s linear;
+	border-top: 10px solid rgba(32, 21, 21, 0.54);
+	border-bottom: 25px solid rgba(32, 21, 21, 0.54);
+}
+
+.circle a:hover{
+	transition: all 1s;
+	color: white;
+}
+
+#watermarked{
+	position: absolute;
+	top: -60px;
+	left: -100px;
+	font-size: 255px;
+	font-weight: bold;
+	opacity: .1;
+	text-shadow: 1px 1px 13px black;
+}
+
+
+
+.first{
+	background-color: #bf360c;
+}
+
+
+.third{
+	background-color: #ff9800;
+}
+
+.fourth{
+	background-color: #ffb74d ;	
+}
+
+.fifth{
+	background-color: #607d8b;
+}
+
+
+
+.circle a{
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 19px;
+	text-shadow: 0 1px 1px black;
+	width: 200px;
+	height: 300px;
+	border-radius: 150px;
+	padding-top: 80px;
+}
+
+
+/******************* view result ******************/
+
+
+ 
+ul{
+	list-style-type: none;
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-right: 1px solid black;
+	cursor: pointer;
+	background: linear-gradient(90deg, white, rgba(189, 189, 189, 0.41) 60%, rgba(36, 37, 42, 0.3));
+	
+}
+
+ul li{
+	display: inline-block;
+}
+
+.viewresultimg{
+}
+
+.viewresultimg img{
+	background-color: gray;
+	width:300px;
+	height: 300px;
+	border-radius: 10px;
+	
+}
+
+.viewresultcandidates{
+	font-size:  25px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: gray;
+	text-decoration: underline;
+	position: absolute;
+	top: 50px;
+	left: 350px;
+	
+}
+
+.viewresultcand{
+	font-size: 16px;
+	width: 200px;
+	position: absolute;
+	top: 30px;
+	left: 350px;
+}
+
+.count{
+	text-align: center;
+	border-radius: 10px;
+	font-size: 100px;
+	position: absolute;
+	top: 70px;
+	left: 350px;
+}
+
+
+

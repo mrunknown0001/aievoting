@@ -51,7 +51,7 @@
 	
 	<div class='container'>
 		<div class='jumbotron'>
-			<h3 class='text-center'>&reg; Gawang Gwapo &trade;</h3>
+			<h3 class='text-center'>AIE Tarlac Voting System Version 1.0</h3>
 		</div>
 	</div>
 	

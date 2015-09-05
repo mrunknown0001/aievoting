@@ -34,7 +34,7 @@
 				
 			</form>
 			<br/>
-			<button class='btn btn-link'><a href='../index.php'><------ Back To Voting</a></button>
+			<a href='../index.php' class='btn btn-link'><------ Back To Voting</a>
 <!-- start of the php script in this page -->
 <?php
 	

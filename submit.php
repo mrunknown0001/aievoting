@@ -14,8 +14,8 @@
 		$candidate_aud = $_POST['aud'];
 		$candidate_busmgr = $_POST['busmgr'];
 		$candidate_pro = $_POST['pro'];
-		$candidate_1strep = $_POST['1strep'];
-		$candidate_2ndrep = $_POST['2ndrep'];
+		$candidate_1strep = $_POST['1stbod'];
+		$candidate_2ndrep = $_POST['2ndbod'];
 			
 		//this function updates the vote count of the candidate , just provide the ff: the candidate student number, the connection string for db server and the voter id number
 		
@@ -40,10 +40,10 @@
 		//for pro
 		addcount($candidate_pro,$conn,$voter);
 		
-		//for 1st year rep
+		//for 1st year bod
 		addcount($candidate_1strep,$conn,$voter);
 		
-		//for 2nd year rep
+		//for 2nd year bod
 		addcount($candidate_2ndrep,$conn,$voter);
 		
 		
@@ -112,13 +112,12 @@
 				
 				$c_code = $row_gci['code'];
 				$c_pos = $row_gci['position'];
-			}	
+				
 				$init_vcount = 1;
 				
 				//add new record in result table
 				$add_cand = "INSERT INTO result (student_num, code, position, vcount) 
 						VALUES ('$sn','$c_code','$c_pos','$init_vcount')";
-				
 				
 				
 				if(mysqli_query($conn,$add_cand)) {
@@ -142,9 +141,10 @@
 				}
 				else {
 					echo "Error in Voting!";
+					die(); // or exit();
 				}
 				
-
+			}
 		}
 		
 	}
